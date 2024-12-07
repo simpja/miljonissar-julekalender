@@ -60,6 +60,9 @@ const ChristmasCalendarContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 const Title = styled.h1`
@@ -69,6 +72,9 @@ const Title = styled.h1`
   color: #b22222;
   margin-bottom: 32px;
   font-family: "Mountains of Christmas", cursive;
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 const App: React.FC = () => {

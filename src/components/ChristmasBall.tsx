@@ -12,8 +12,11 @@ interface ChristmasBallProps {
 const BallContainer = styled(motion.div)`
   cursor: pointer;
   transform-style: preserve-3d;
-  width: 100px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 240px;
+  margin: 0 auto;
 `;
 
 const BallSVG = styled(motion.svg)`

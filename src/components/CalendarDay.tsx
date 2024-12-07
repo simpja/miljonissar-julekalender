@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import SoundCloudPlayer from './SoundCloudPlayer';
-import ChristmasBall from './ChristmasBall';
-import { CalendarDay as CalendarDayType } from '../types/CalendarTypes';
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import SoundCloudPlayer from "./SoundCloudPlayer";
+import ChristmasBall from "./ChristmasBall";
+import { CalendarDay as CalendarDayType } from "../types/CalendarTypes";
 
 interface CalendarDayProps {
   day: CalendarDayType;
@@ -15,6 +15,8 @@ const DayContainer = styled.div`
   width: 100%;
   padding-bottom: 100%; // This creates a square aspect ratio
   position: relative;
+  max-width: 300px;
+  margin: 0 auto;
 `;
 
 const ContentContainer = styled.div`
@@ -52,7 +54,7 @@ const Back = styled(motion.div)`
   transform: rotateY(180deg);
 `;
 
-const colors = ['Red', 'Green', 'Blue', 'Gold'];
+const colors = ["Red", "Green", "Blue", "Gold"];
 
 const CalendarDay: React.FC<CalendarDayProps> = ({ day, isOpen, onToggle }) => {
   const color = colors[day.date % colors.length];
@@ -61,7 +63,12 @@ const CalendarDay: React.FC<CalendarDayProps> = ({ day, isOpen, onToggle }) => {
     <DayContainer>
       <ContentContainer>
         <Front>
-          <ChristmasBall day={day.date} color={color} isFlipped={isOpen} onClick={onToggle} />
+          <ChristmasBall
+            day={day.date}
+            color={color}
+            isFlipped={isOpen}
+            onClick={onToggle}
+          />
         </Front>
         <Back
           initial={false}
@@ -76,4 +83,3 @@ const CalendarDay: React.FC<CalendarDayProps> = ({ day, isOpen, onToggle }) => {
 };
 
 export default CalendarDay;
-

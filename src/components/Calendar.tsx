@@ -11,10 +11,20 @@ const CalendarContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const CalendarDayWrapper = styled.div`
   flex-basis: calc(25% - 12px);
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    max-width: 300px;
+  }
 `;
 
 const Calendar: React.FC<CalendarProps> = ({ data }) => {
