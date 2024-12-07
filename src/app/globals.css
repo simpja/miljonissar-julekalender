@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'ChristmasFont';
+  src: url('/fonts/MountainsofChristmas-Regular.ttf') format('truetype');
+}
+
+body {
+  background-image: url('https://img.freepik.com/free-vector/hand-drawn-christmas-background_23-2148735509.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'ChristmasFont', cursive;
+}
+
+.christmas-calendar {
+  @apply max-w-4xl mx-auto p-8 bg-white bg-opacity-90 rounded-lg shadow-xl;
+}
+
+.calendar-grid {
+  @apply grid grid-cols-4 gap-4;
+}
+
+.calendar-day {
+  @apply aspect-square;
+}
+
+.calendar-day-content {
+  @apply w-full h-full relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  @apply absolute w-full h-full backface-hidden;
+}
+
+.back {
+  @apply absolute w-full h-full backface-hidden bg-white rounded-lg p-2 flex items-center justify-center overflow-hidden;
+  transform: rotateY(180deg);
+}
+
+.christmas-ball {
+  @apply cursor-pointer;
+  transform-style: preserve-3d;
+}
+
+.soundcloud-player {
+  @apply w-full h-full;
+}
+
+.soundcloud-player iframe {
+  @apply w-full h-full;
+}
+
